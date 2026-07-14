@@ -3,55 +3,68 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Do Sofá à Maratona</title>
+  <title>Do Sofá à Maratona | Guia Prático</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root { --red: #c0392b; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000; color: #fff; line-height: 1.6; }
+    :root { --red: #c0392b; --white: #ffffff; --bg: #000000; }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Open Sans', sans-serif; background: var(--bg); color: #fff; line-height: 1.6; }
     
-    /* Cabeçalho */
-    nav { height: 70px; background: #000; border-bottom: 2px solid var(--red); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; position: sticky; top: 0; z-index: 100; }
-    .logo { font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    /* Navbar */
+    nav { height: 75px; background: #000; border-bottom: 1px solid #222; display: flex; align-items: center; justify-content: space-between; padding: 0 7%; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; }
     .logo span { color: var(--red); }
-    .nav-btn { background: var(--red); color: #fff; text-decoration: none; padding: 8px 15px; font-weight: bold; text-transform: uppercase; font-size: 11px; border-radius: 4px; }
+    .nav-btn { background: var(--red); color: #fff; text-decoration: none; padding: 10px 18px; font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; font-size: 11px; border-radius: 4px; }
 
-    /* Hero (Topo) - Ajustado para mostrar seu rosto */
-    .hero { 
-      min-height: 90vh; 
-      display: flex; 
-      align-items: center; 
-      padding: 0 7%; 
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Corrida 2.jpg') center top / cover no-repeat;
-      border-bottom: 5px solid var(--red);
-    }
-    .hero-content { max-width: 700px; }
-    .hero h1 { font-size: clamp(40px, 8vw, 70px); line-height: 1; margin: 0; font-weight: 900; text-transform: uppercase; }
+    /* Hero */
+    .hero { min-height: 90vh; display: flex; align-items: center; padding: 60px 7%; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('Corrida 2.jpg') center top / cover no-repeat; }
+    .hero-content { max-width: 750px; }
+    .eyebrow { font-family: 'Montserrat', sans-serif; color: var(--red); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 12px; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 8vw, 80px); line-height: 0.9; margin: 0; font-weight: 900; text-transform: uppercase; }
     .hero h1 span { color: var(--red); }
-    .hero p { font-size: 20px; color: #ccc; margin: 20px 0; }
+    .hero p { font-size: 20px; color: #ccc; margin: 30px 0; max-width: 550px; }
+    .main-btn { display: inline-block; padding: 22px 35px; background: var(--red); color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; border-radius: 4px; transition: 0.3s; font-size: 16px; }
 
-    /* Galeria Horizontal */
-    .photos { display: flex; width: 100%; height: 500px; overflow: hidden; background: #000; border-top: 2px solid var(--red); border-bottom: 2px solid var(--red); }
-    .photos img { width: 25%; height: 100%; object-fit: cover; object-position: top; border-right: 1px solid #222; }
+    /* Seção: Isso é para você se... */
+    .for-you { background: #faf4f2; color: #000; padding: 100px 7%; }
+    .section-title { font-family: 'Montserrat', sans-serif; font-size: clamp(30px, 5vw, 50px); text-transform: uppercase; font-weight: 900; line-height: 1; margin: 10px 0 50px 0; }
+    .for-you h2 span { color: var(--red); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .card { background: #fff; padding: 40px 30px; border-top: 4px solid var(--red); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    .card-icon { font-size: 35px; display: block; margin-bottom: 15px; }
+    .card h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; text-transform: uppercase; margin-bottom: 15px; }
 
     /* Sobre o Autor */
-    .wrap { max-width: 1200px; margin: auto; padding: 80px 20px; }
-    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .story img { width: 100%; height: auto; border: 3px solid var(--red); }
-    .story h2 { font-size: 40px; text-transform: uppercase; font-weight: 900; margin-top: 0; }
-    .story h2 span { color: var(--red); }
+    .about { padding: 100px 7%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .about img { width: 100%; height: auto; border: 2px solid var(--red); }
+    .quote { border-left: 4px solid var(--red); padding-left: 25px; font-style: italic; font-size: 22px; color: #ccc; margin-top: 30px; }
 
-    /* Preço /
-    .buy { text-align: center; padding: 100px 20px; background: #080808; }
-    .pricebox { border: 2px solid var(--red); padding: 60px 20px; max-width: 450px; margin: auto; }
-    .price { font-size: 70px; font-weight: 900; color: var(--red); margin: 10px 0; }
-    
-    .btn-main { display: inline-block; padding: 20px 40px; background: var(--red); color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; margin-top: 20px; font-size: 18px; }
+    /* O Método (01-05) */
+    .steps { background: #080808; padding: 100px 7%; }
+    .steps-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
+    .step-item { border-top: 1px solid #333; padding-top: 20px; }
+    .step-num { font-family: 'Montserrat', sans-serif; font-size: 14px; color: var(--red); font-weight: 900; display: block; margin-bottom: 10px; }
+    .step-item h3 { font-family: 'Montserrat', sans-serif; font-size: 15px; text-transform: uppercase; margin: 0; }
+
+    /* Galeria */
+    .photos { display: flex; width: 100%; height: 500px; }
+    .photos img { width: 25%; height: 100%; object-fit: cover; object-position: top; }
+
+    /* Preço / Checkout */
+    .checkout { text-align: center; padding: 120px 7%; background: #000; }
+    .pricebox { border: 1px solid #333; padding: 60px 40px; max-width: 550px; margin: 40px auto; background: #050505; position: relative; }
+    .price-tag { color: var(--red); font-family: 'Montserrat', sans-serif; font-weight: 900; line-height: 1; margin: 0; }
+    .currency { font-size: 30px; vertical-align: top; }
+    .amount { font-size: 100px; }
+    .decimal { font-size: 30px; vertical-align: top; }
+    .list-checks { list-style: none; padding: 0; margin: 40px 0; text-align: left; display: inline-block; }
+    .list-checks li { margin-bottom: 15px; font-size: 16px; display: flex; align-items: center; }
+    .list-checks li::before { content: '✓'; color: var(--red); margin-right: 15px; font-weight: bold; }
 
     @media (max-width: 768px) {
-      .story { grid-template-columns: 1fr; text-align: center; }
-      .photos { height: auto; flex-direction: column; }
-      .photos img { width: 100%; height: 400px; }
-      .hero { text-align: center; justify-content: center; background-position: center top; }
+      .grid-3, .about, .steps-grid { grid-template-columns: 1fr; }
+      .photos { flex-direction: column; height: auto; }
+      .photos img { width: 100%; height: 350px; }
     }
   </style>
 </head>
@@ -59,26 +72,49 @@
 
   <nav>
     <div class="logo">Do Sofá à <span>Maratona</span></div>
-    <a href="#comprar" class="nav-btn">Comprar Agora</a>
+    <a href="#comprar" class="nav-btn">Baixe o Ebook</a>
   </nav>
 
   <header class="hero">
     <div class="hero-content">
-      <div style="color:var(--red); font-weight:bold; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Guia para Iniciantes</div>
+      <div class="eyebrow">Uma jornada real. Um método claro.</div>
       <h1>Do Sofá<br>à <span>Maratona.</span></h1>
-      <p>Transforme sua saúde e conquiste os 42km com um método gradual que respeita o seu ritmo.</p>
-      <a href="#comprar" class="btn-main">Quero começar a correr</a>
+      <p>Você não precisa nascer corredor. Você só precisa começar — e respeitar o seu próximo passo.</p>
+      <a href="#comprar" class="main-btn">Começar minha jornada — R$ 47,99</a>
+      <div style="margin-top:20px; font-size:12px; color:#888;">Download digital imediato • PDF + EPUB • Leia em qualquer lugar</div>
     </div>
   </header>
 
-  <section class="wrap">
-    <div class="story">
-      <img src="WhatsApp Image 2026-07-12 at 18.43.08 (5).jpeg" alt="Autor">
-      <div>
-        <div style="color:var(--red); font-weight:bold; text-transform:uppercase; letter-spacing:2px;">A história</div>
-        <h2>Eu corro <span>pela vida.</span></h2>
-        <p style="font-size:18px; color:#bbb;">Saí do sofá diretamente para as pistas. Este guia é o mapa de tudo o que aprendi nessa jornada de superação.</p>
-      </div>
+  <section class="for-you">
+    <div class="eyebrow">Isso é para você se...</div>
+    <h2 class="section-title">Você já tentou antes.<br><span>E algo ficou no caminho.</span></h2>
+    <div class="grid-3">
+      <div class="card"><span class="card-icon">😮‍💨</span><h3>Começar parece impossível</h3><p>Dois minutos de corrida deixam você sem fôlego e cansado.</p></div>
+      <div class="card"><span class="card-icon">🤕</span><h3>Medo de lesões</h3><p>Você quer se mover com segurança, sem forçar demais o seu corpo.</p></div>
+      <div class="card"><span class="card-icon">🔁</span><h3>Falta de constância</h3><p>Você precisa de disciplina, não de mais um plano radical.</p></div>
+    </div>
+  </section>
+
+  <section class="about">
+    <img src="WhatsApp Image 2026-07-12 at 18.43.08 (5).jpeg" alt="Autor">
+    <div>
+      <div class="eyebrow">Sobre o autor</div>
+      <h2 style="font-family:'Montserrat'; font-size:40px; text-transform:uppercase; margin-top:0;">Eu não corro apenas provas.<br><span>Eu corro pela vida.</span></h2>
+      <p>Eu sei o que é começar do zero, lutar pela constância e encontrar espaço para o movimento em uma vida real com responsabilidades.</p>
+      <p>Este não é um manual de treinamento genérico. É o guia inteligente e honesto que eu gostaria de ter tido quando dei meu primeiro passo.</p>
+      <div class="quote">“Você não precisa nascer corredor. Você precisa aprender a habilidade, respeitar o processo e voltar amanhã.”</div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="eyebrow">O Método</div>
+    <h2 class="section-title" style="color:var(--white);">Seu caminho do zero aos 42k.</h2>
+    <div class="steps-grid">
+      <div class="step-item"><span class="step-num">01</span><h3>Despertar: Seus primeiros passos e os 5k.</h3></div>
+      <div class="step-item"><span class="step-num">02</span><h3>Construir o motor: Resistência e confiança.</h3></div>
+      <div class="step-item"><span class="step-num">03</span><h3>Consolidar: Tornar os 10k seu novo normal.</h3></div>
+      <div class="step-item"><span class="step-num">04</span><h3>Meia Maratona: Estratégia e força mental.</h3></div>
+      <div class="step-item"><span class="step-num">05</span><h3>Maratona: Conquiste cada um dos 42.195 km.</h3></div>
     </div>
   </section>
 
@@ -89,7 +125,29 @@
     <img src="WhatsApp Image 2026-07-12 at 18.43.08 (2).jpeg">
   </section>
 
-  <section id="comprar" class="buy">
+  <section id="comprar" class="checkout">
+    <div class="eyebrow">Disponível agora</div>
+    <h2 class="section-title">Um investimento.<br><span>Uma vida inteira de corrida.</span></h2>
     <div class="pricebox">
-      <h3 style="margin:0; text-transform:uppercase; letter-spacing:2px;">Oferta de Lançamento</h3>
-      <div class="price"
+      <div class="price-tag">
+        <span class="currency">R$</span><span class="amount">47</span><span class="decimal">,99</span>
+      </div>
+      <p style="color:#888; text-transform:uppercase; font-size:12px; margin-top:10px;">Pagamento único • Download imediato</p>
+      
+      <ul class="list-checks">
+        <li>Ebook completo em PDF + EPUB</li>
+        <li>Progressão em 5 fases: 0 à Maratona</li>
+        <li>Orientação prática para iniciantes</li>
+        <li>Disponível em Português e Inglês</li>
+      </ul>
+
+      <a href="https://pay.hotmart.com/SEU_LINK" class="main-btn" style="width:100%;">Acesso Imediato — R$ 47,99</a>
+    </div>
+  </section>
+
+  <footer style="text-align:center; padding:60px 0; color:#444; font-size:11px; text-transform:uppercase; letter-spacing:1px;">
+    © 2026 Do Sofá à Maratona • Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
