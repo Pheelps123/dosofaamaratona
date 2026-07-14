@@ -3,64 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Do Sofá à Maratona | Guia para Iniciantes</title>
+  <title>Do Sofá à Maratona</title>
   <style>
-    /* Estilo Cinema igual ao Inglês */
+    :root { --red: #c0392b; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #000000; color: #ffffff; line-height: 1.6; }
+    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #000; color: #fff; line-height: 1.6; }
     
-    nav { height: 70px; background: #000; border-bottom: 2px solid #c0392b; display: flex; align-items: center; justify-content: space-between; padding: 0 7%; position: sticky; top: 0; z-index: 100; }
-    
-    /* HERO: Ajustado para o seu rosto aparecer /
+    /* Cabeçalho */
+    nav { height: 70px; background: #000; border-bottom: 2px solid var(--red); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 900; text-transform: uppercase; letter-spacing: 1px; }
+    .logo span { color: var(--red); }
+    .nav-btn { background: var(--red); color: #fff; text-decoration: none; padding: 8px 15px; font-weight: bold; text-transform: uppercase; font-size: 11px; border-radius: 4px; }
+
+    /* Hero (Topo) - Ajustado para mostrar seu rosto */
     .hero { 
       min-height: 90vh; 
       display: flex; 
       align-items: center; 
-      padding: 50px 7%; 
+      padding: 0 7%; 
       background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('Corrida 2.jpg') center top / cover no-repeat;
+      border-bottom: 5px solid var(--red);
     }
-    
-    .hero h1 { font-size: 50px; text-transform: uppercase; margin: 0; font-weight: 900; }
-    .hero h1 span { color: #c0392b; }
-    
-    .btn { display: inline-block; padding: 20px 35px; background: #c0392b; color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; margin-top: 20px; }
+    .hero-content { max-width: 700px; }
+    .hero h1 { font-size: clamp(40px, 8vw, 70px); line-height: 1; margin: 0; font-weight: 900; text-transform: uppercase; }
+    .hero h1 span { color: var(--red); }
+    .hero p { font-size: 20px; color: #ccc; margin: 20px 0; }
 
-    .wrap { max-width: 1100px; margin: auto; padding: 80px 20px; }
-    
-    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .story img { width: 100%; height: auto; border: 2px solid #c0392b; }
+    /* Galeria Horizontal */
+    .photos { display: flex; width: 100%; height: 500px; overflow: hidden; background: #000; border-top: 2px solid var(--red); border-bottom: 2px solid var(--red); }
+    .photos img { width: 25%; height: 100%; object-fit: cover; object-position: top; border-right: 1px solid #222; }
 
-    .photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; background: #000; padding: 5px; }
-    .photos img { width: 100%; height: 400px; object-fit: cover; object-position: top; }
+    /* Sobre o Autor */
+    .wrap { max-width: 1200px; margin: auto; padding: 80px 20px; }
+    .story { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .story img { width: 100%; height: auto; border: 3px solid var(--red); }
+    .story h2 { font-size: 40px; text-transform: uppercase; font-weight: 900; margin-top: 0; }
+    .story h2 span { color: var(--red); }
 
+    /* Preço /
     .buy { text-align: center; padding: 100px 20px; background: #080808; }
-    .pricebox { border: 2px solid #c0392b; padding: 50px 20px; max-width: 450px; margin: auto; }
-    .price { font-size: 60px; font-weight: 900; color: #c0392b; margin: 10px 0; }
+    .pricebox { border: 2px solid var(--red); padding: 60px 20px; max-width: 450px; margin: auto; }
+    .price { font-size: 70px; font-weight: 900; color: var(--red); margin: 10px 0; }
+    
+    .btn-main { display: inline-block; padding: 20px 40px; background: var(--red); color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; border-radius: 4px; margin-top: 20px; font-size: 18px; }
 
     @media (max-width: 768px) {
       .story { grid-template-columns: 1fr; text-align: center; }
-      .photos { grid-template-columns: 1fr 1fr; }
-      .photos img { height: 250px; }
-      .hero { background-position: center top; text-align: center; justify-content: center; }
+      .photos { height: auto; flex-direction: column; }
+      .photos img { width: 100%; height: 400px; }
+      .hero { text-align: center; justify-content: center; background-position: center top; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <div style="font-weight: 900; text-transform: uppercase;">Do Sofá à <span style="color:#c0392b;">Maratona</span></div>
-    <a href="#comprar" class="btn" style="padding: 10px 15px; font-size: 11px; margin: 0;">Comprar</a>
+    <div class="logo">Do Sofá à <span>Maratona</span></div>
+    <a href="#comprar" class="nav-btn">Comprar Agora</a>
   </nav>
 
   <header class="hero">
-    <div style="max-width: 600px;">
-      <div style="color: #c0392b; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Guia para Iniciantes</div>
+    <div class="hero-content">
+      <div style="color:var(--red); font-weight:bold; text-transform:uppercase; letter-spacing:2px; margin-bottom:10px;">Guia para Iniciantes</div>
       <h1>Do Sofá<br>à <span>Maratona.</span></h1>
-      <p style="font-size: 18px; color: #ccc;">Transforme sua saúde e conquiste os 42km com um método que respeita o seu ritmo.</p>
-      <a href="#comprar" class="btn">Quero Começar</a>
+      <p>Transforme sua saúde e conquiste os 42km com um método gradual que respeita o seu ritmo.</p>
+      <a href="#comprar" class="btn-main">Quero começar a correr</a>
     </div>
   </header>
 
   <section class="wrap">
     <div class="story">
-      <img src="WhatsApp Image 2026-07-12 a
+      <img src="WhatsApp Image 2026-07-12 at 18.43.08 (5).jpeg" alt="Autor">
+      <div>
+        <div style="color:var(--red); font-weight:bold; text-transform:uppercase; letter-spacing:2px;">A história</div>
+        <h2>Eu corro <span>pela vida.</span></h2>
+        <p style="font-size:18px; color:#bbb;">Saí do sofá diretamente para as pistas. Este guia é o mapa de tudo o que aprendi nessa jornada de superação.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="photos">
+    <img src="Corrida 1.jpg">
+    <img src="WhatsApp Image 2026-07-12 at 18.43.08 (4).jpeg">
+    <img src="WhatsApp Image 2026-07-12 at 18.43.08.jpeg">
+    <img src="WhatsApp Image 2026-07-12 at 18.43.08 (2).jpeg">
+  </section>
+
+  <section id="comprar" class="buy">
+    <div class="pricebox">
+      <h3 style="margin:0; text-transform:uppercase; letter-spacing:2px;">Oferta de Lançamento</h3>
+      <div class="price"
